@@ -15,6 +15,8 @@ Ambas soluciones se apoyan en cámaras instaladas en vehículos que recorren rut
 -Diego Alexander Huaman Sirio (u20211f983)
 
 - Descripcion del Data Set:
+  
+Link del data set original: https://biankatpas.github.io/Cracks-and-Potholes-in-Road-Images-Dataset/ 
 
 El conjunto de datos "Cracks and Potholes in Road Images" fue creado con el propósito de facilitar estudios sobre la detección automática de defectos en pavimentos asfaltados, específicamente grietas y baches y tiene 2,235 imágenes seleccionadas manualmente entre los años 2014 y 2017 con una resolución mínima de 4 megapíxeles.
 
