@@ -12,7 +12,7 @@ Ambas soluciones se apoyan en cámaras instaladas en vehículos que recorren rut
 
 -Ilan André Núñez Del Arco (u202217100)
 
--Diego
+-Diego Alexander Huaman Sirio (u20211f983)
 
 - Descripcion del Data Set:
 
