@@ -30,14 +30,14 @@ class CrackDataset(Dataset):
         mask_path = self.find_image_by_suffix(folder, self.mask_type)
 
         if raw_path is None or mask_path is None:
-            raise FileNotFoundError(f"❌ No se encontró RAW o {self.mask_type} en: {folder}")
+            raise FileNotFoundError(f" No se encontró RAW o {self.mask_type} en: {folder}")
 
         # Leer imágenes
         raw = cv2.imread(raw_path, cv2.IMREAD_COLOR)
         mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
 
         if raw is None or mask is None:
-            raise ValueError(f"❌ Error al leer imagen RAW o {self.mask_type} en: {folder}")
+            raise ValueError(f" Error al leer imagen RAW o {self.mask_type} en: {folder}")
 
         # Redimensionar (a tamaño fijo compatible con U-Net)
         h, w = self.img_size

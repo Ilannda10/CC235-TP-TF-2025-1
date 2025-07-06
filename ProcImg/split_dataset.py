@@ -19,7 +19,7 @@ def split_dataset(original_path='dataset', train_path='dataset_split/train', tes
     for folder in test_folders:
         shutil.copytree(os.path.join(original_path, folder), os.path.join(test_path, folder))
 
-    print(f"✅ División completa: {len(train_folders)} train / {len(test_folders)} test")
+    print(f" División completa: {len(train_folders)} train / {len(test_folders)} test")
 
 if __name__ == "__main__":
     split_dataset()

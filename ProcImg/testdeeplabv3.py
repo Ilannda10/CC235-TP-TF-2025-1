@@ -47,7 +47,7 @@ with torch.no_grad():
             empty_masks += 1
 
 # Resultados
-print("📊 Evaluación del modelo DeepLabV3+:")
-print(f"🔹 Dice Score promedio: {total_dice / total_pixels:.4f}")
-print(f"🔹 Imágenes con máscara vacía: {empty_masks}/{total_pixels}")
-print(f"🔹 Predicciones vacías: {empty_preds}/{total_pixels}")
+print(" Evaluación del modelo DeepLabV3+:")
+print(f" Dice Score promedio: {total_dice / total_pixels:.4f}")
+print(f" Imágenes con máscara vacía: {empty_masks}/{total_pixels}")
+print(f" Predicciones vacías: {empty_preds}/{total_pixels}")

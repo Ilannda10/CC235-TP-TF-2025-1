@@ -76,7 +76,7 @@ with torch.no_grad():
             break
 
 # Resultado final
-print("📊 Evaluación completa:")
-print(f"🔹 Dice Score promedio: {total_dice / total_samples:.4f}")
-print(f"🔹 Imágenes con máscara vacía: {empty_masks}/{total_samples}")
-print(f"🔹 Predicciones vacías: {empty_preds}/{total_samples}")
+print(" Evaluación completa:")
+print(f" Dice Score promedio: {total_dice / total_samples:.4f}")
+print(f" Imágenes con máscara vacía: {empty_masks}/{total_samples}")
+print(f" Predicciones vacías: {empty_preds}/{total_samples}")

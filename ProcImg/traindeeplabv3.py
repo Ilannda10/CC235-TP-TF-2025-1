@@ -42,7 +42,7 @@ def main():
         train_loss = 0.0
         start_time = time.time()
 
-        print(f"\n📚 Época {epoch+1}/{EPOCHS} - Entrenando...")
+        print(f"\n Época {epoch+1}/{EPOCHS} - Entrenando...")
         for imgs, masks in tqdm(train_loader, desc="🛠️ Entrenando", leave=False):
             imgs, masks = imgs.to(DEVICE), masks.to(DEVICE)
 
@@ -60,15 +60,15 @@ def main():
         avg_train_loss = train_loss / len(train_loader)
         duration = time.time() - start_time
 
-        print(f"📉 Train Loss: {avg_train_loss:.4f} | 🕒 Tiempo: {duration:.2f}s | 🧠 GPU Mem: {round(torch.cuda.max_memory_allocated() / 1024**2)} MB")
+        print(f"Train Loss: {avg_train_loss:.4f} | Tiempo: {duration:.2f}s | GPU Mem: {round(torch.cuda.max_memory_allocated() / 1024**2)} MB")
         torch.cuda.reset_peak_memory_stats()
 
         # Evaluación
         model.eval()
         val_loss = 0.0
-        print("🔍 Evaluando...")
+        print("Evaluando...")
         with torch.no_grad():
-            for imgs, masks in tqdm(test_loader, desc="🧪 Evaluando", leave=False):
+            for imgs, masks in tqdm(test_loader, desc=" Evaluando", leave=False):
                 imgs, masks = imgs.to(DEVICE), masks.to(DEVICE)
                 with torch.amp.autocast(device_type='cuda'):
                     preds = model(imgs)
@@ -76,15 +76,15 @@ def main():
                 val_loss += loss.item()
 
         avg_val_loss = val_loss / len(test_loader)
-        print(f"📊 Val Loss: {avg_val_loss:.4f}")
+        print(f"Val Loss: {avg_val_loss:.4f}")
 
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
             torch.save(model.state_dict(), "deeplabv3_crack_best.pth")
-            print(f"✅ Nuevo mejor modelo guardado (Val Loss: {best_val_loss:.4f})")
+            print(f"Nuevo mejor modelo guardado (Val Loss: {best_val_loss:.4f})")
 
     torch.save(model.state_dict(), "deeplabv3_crack_last.pth")
-    print("💾 Último modelo guardado como 'deeplabv3_crack_last.pth'")
+    print("Último modelo guardado como 'deeplabv3_crack_last.pth'")
 
 if __name__ == "__main__":
     main()
